@@ -4,7 +4,7 @@ RNA sequencing analysis pipeline
 
 ## Download directory
 
-git clone https://github.com/malumbreslab/RNAseq_umis
+`git clone https://github.com/malumbreslab/RNAseq_umis.git` 
 
 ## Prerequisites
 
