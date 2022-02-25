@@ -1,16 +1,42 @@
 # RNAseq_umis
 
+## Description
+
 RNA sequencing analysis pipeline with UMIs
 
-## Download directory
+Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
 
-`git clone https://github.com/malumbreslab/RNAseq_umis.git` 
+## Workflow
 
-## Prerequisites
+## Contents of the repository
 
-First of all you must have conda installed and you have to create a new enviroment (using the config_env.yml file).
+- The bash script `rnaseq_pipeline_umis.sh` that can be used for obtaining read counts from fastq files.
+- `Resource` folder has two files, `polyA.fa.gz` (extract polyA in trimmering) and `truseq_rna.fa.gz` (extract adapters in trimmering).
+- `config_env.yml` which is a file for create the working enviroment.
+
+The output of this bash script includes:
+
+- `<sample>.read_counts.txt` which are the read counts (counts folder).
+- `<sample>.read_distribution.txt` which are the read counts (counts folder).
+- `<sample>.deduplicated.bam` which are deduplicated bam (<sample> folder).
+
+There are other outputs lees important such as fastqc, bai, trimmering, umi data, ...
+
+## Pipeline
+  
+### Step 1: Clone the repo in your home
+
+`git clone https://github.com/malumbreslab/RNAseq_umis.git`
+
+`cd RNAseq_umis`
+
+### Step 2: Update conda and create the environment
+
+`conda update --all`
 
 `conda env create -f config_env.yml`
+  
+### Step 3: Activate the environment
 
 `conda activate rseq`
 
