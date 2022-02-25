@@ -16,6 +16,10 @@ First of all you must have conda installed and you have to create a new envirome
 
 ## Using pipeline
 
+Cretae folder for result files
+
+`mkdir counts genome fastqc`
+
 Download genome reference and annotations files (this url is for hg38 genome reference)
 
 `cd genome`
