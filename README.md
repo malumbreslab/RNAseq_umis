@@ -1,6 +1,6 @@
 # RNAseq_umis
 
-RNA sequencing analysis pipeline
+RNA sequencing analysis pipeline with UMIs
 
 ## Download directory
 
