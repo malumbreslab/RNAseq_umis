@@ -46,6 +46,13 @@ Index genome reference
 
 `STAR --runThreadN 16 --runMode genomeGenerate --genomeDir genome --genomeFastaFiles genome/genome_hg38.fa --sjdbGTFfile genome/annotations_hg18.gtf --sjdbOverhang 75`
 
+## RUN RNAseq PIPELINE
+
+You must run this in your terminal shell and in sample must type the sample name, such as S1.
+
+`bash rnaseq_pipeline_umis.sh <sample>`
+
+## RECOMENDATIONS
 
 
 
