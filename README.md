@@ -2,6 +2,10 @@
 
 RNA sequencing analysis pipeline
 
+## Download directory
+
+git clone 
+
 ## Prerequisites
 
 First of all you must have conda installed and you have to create a new enviroment (using the config_env.yml file).
@@ -11,16 +15,6 @@ First of all you must have conda installed and you have to create a new envirome
 `conda activate rseq`
 
 ## Using pipeline
-
-Create directory of working and enter.
-
-`mkdir rnaseq`
-
-`cd rnaseq`
-
-Create folder for save result files
-
-`mkdir fasqc genome counts`
 
 Download genome reference and annotations files (this url is for hg38 genome reference)
 
