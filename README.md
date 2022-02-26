@@ -22,7 +22,7 @@ The output of this bash script includes:
 - `<sample>.read_distribution.txt` which are the read counts (counts folder).
 - `<sample>.deduplicated.bam` which are deduplicated bam (<sample> folder).
 
-There are other outputs lees important such as fastqc, bai, trimmering, umi data, ...
+There are other outputs less important such as fastqc, bai, trimmering, umi data, ...
 
 ## Pipeline
   
