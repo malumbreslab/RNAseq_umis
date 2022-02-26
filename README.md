@@ -8,6 +8,8 @@ Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
 
 ## Workflow
 
+![This is an image](/images/workflow.png)
+
 ## Contents of the repository
 
 - The bash script `rnaseq_pipeline_umis.sh` that can be used for obtaining read counts from fastq files.
