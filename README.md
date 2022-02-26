@@ -28,14 +28,17 @@ There are other outputs lees important such as fastqc, bai, trimmering, umi data
   
 ### Step 1: Clone the repo in your home
 
-> git clone https://github.com/malumbreslab/RNAseq_umis.git
-> cd RNAseq_umis`
-
+```
+git clone https://github.com/malumbreslab/RNAseq_umis.git
+cd RNAseq_umis
+```
+  
 ### Step 2: Update conda and create the environment
 
-`conda update --all`
-
-`conda env create -f config_env.yml`
+```
+conda update --all
+conda env create -f config_env.yml
+```
   
 ### Step 3: Activate the environment
 
