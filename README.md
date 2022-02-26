@@ -28,7 +28,7 @@ There are other outputs lees important such as fastqc, bai, trimmering, umi data
   
 ### Step 1: Clone the repo in your home
 
-`git clone https://github.com/malumbreslab/RNAseq_umis.git`
+> git clone https://github.com/malumbreslab/RNAseq_umis.git
 
 `cd RNAseq_umis`
 
