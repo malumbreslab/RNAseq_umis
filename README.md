@@ -70,12 +70,6 @@ gzip -d hg38.ncbiRefSeq.gtf.gz
 gzip -d hg38_RefSeq.bed.gz 
 ```
   
-If you have not wget package installed
-  
-```
-conda install -c anaconda wget
-```
-  
 ### Step 6: Index genome reference (hg38)
 
 ```
