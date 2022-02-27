@@ -28,6 +28,14 @@ There are other outputs less important such as fastqc, bai, trimmering, umi data
   
 ### Step 1: Clone the repo in your home
 
+If you have not wget package installed
+  
+```
+conda install -c anaconda git
+```
+  
+Then clone the entire repository in your local space
+
 ```
 git clone https://github.com/malumbreslab/RNAseq_umis.git
 cd RNAseq_umis
