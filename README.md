@@ -6,6 +6,11 @@ RNA sequencing analysis pipeline with UMIs
 
 Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
 
+## Table of contents
+
+- [Workflow]()
+- Contents of the repository
+
 ## Workflow
 
 ![This is an image](/images/workflow.png)
