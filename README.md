@@ -8,7 +8,7 @@ Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
 
 ## Table of contents
 
-- [Workflow]()
+- [Workflow](#workflow)
 - Contents of the repository
 
 ## Workflow
