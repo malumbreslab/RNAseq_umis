@@ -60,13 +60,20 @@ conda env create -f config_env.yml
 ```
 conda activate rseq
 ```
+### Step 4: Create folders for data
+
+In this folder you must introduce compressed fastq files (Example: S1.fastq.gz)
   
-### Step 4: Create folders for result files
+```
+mkdir data
+```
+  
+### Step 5: Create folders for result files
 
 ```
 mkdir counts genome fastqc
 ```
-### Step 5: Download genome reference and annotations files (hg38)
+### Step 6: Download genome reference and annotations files (hg38)
 
 If you have not wget package installed
   
@@ -85,27 +92,41 @@ gzip -d hg38.ncbiRefSeq.gtf.gz
 gzip -d hg38_RefSeq.bed.gz 
 ```
   
-### Step 6: Index genome reference (hg38)
+### Step 7: Index genome reference (hg38)
 
 ```
 cd ..
 STAR --runThreadN 16 --runMode genomeGenerate --genomeDir genome --genomeFastaFiles genome/genome_hg38.fa --sjdbGTFfile genome/annotations_hg18.gtf --sjdbOverhang 75
 ```
 
-### Step 6a: Run pipeline in local
+### Step 8a: Run pipeline in local
 
-You must run this in your terminal shell and in sample must type the sample name, such as S1.
+You must run this in your terminal shell and in sample must type after the script the diferent samples names that you want to analyze separated by spaces.
 
 ```
-bash rnaseq_pipeline_umis.sh <sample>
+bash rnaseq_pipeline_umis.sh <sample1> <sample2> <sample3>
 ```
   
-### Step 6b: Run pipeline in cluster of CNIO
+### Step 8b: Run pipeline in cluster of CNIO
 
-```
-sbatch --mem=64G -t1440 -c 16 -o log.txt -e error.txt --wrap "bash rnaseq_pipeline_umis.sh <sample>"
-```
+Outputs:
   
+- `log.txt` is the output file
+- `error.txt` is the error file
+  
+Parameters:
+  
+- `--mem` is memory
+- `-t` is time
+- `-c` is number of cores
+- `-o` is name of output file
+- `-e` is name of error file
+- `--wrap` is the command which you want to run on the cluster
+  
+```
+sbatch --mem=64G -t1440 -c 16 -o log.txt -e error.txt --wrap "bash rnaseq_pipeline_umis.sh <sample1> <sample2> <sample3>"
+```
+
 ## Recomendations
 
 The minimal requeriments are:
