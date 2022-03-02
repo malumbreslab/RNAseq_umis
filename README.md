@@ -9,7 +9,9 @@ Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
 ## Table of contents
 
 - [Workflow](#workflow)
-- Contents of the repository
+- [Contents of the repository](#contents-of-the-repository)
+- [Pipeline](#pipeline)
+- [Recomendations](#recomendations)
 
 ## Workflow
 
@@ -104,7 +106,7 @@ bash rnaseq_pipeline_umis.sh <sample>
 sbatch --mem=64G -t1440 -c 16 -o log.txt -e error.txt --wrap "bash rnaseq_pipeline_umis.sh <sample>"
 ```
   
-## RECOMENDATIONS
+## Recomendations
 
 The minimal requeriments are:
 
