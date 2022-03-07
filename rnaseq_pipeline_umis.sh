@@ -25,7 +25,7 @@ do
     echo "Trimmering done"
 
     echo "Quality control with fasqc ..."
-    fastqc -o $1/ -t 4 $1/$1.clean.fastq.gz
+    fastqc -o $i/ -t 4 $i/$i.clean.fastq.gz
     echo "Quality control done"
 
     ## Genome reference Index
@@ -38,18 +38,18 @@ do
     ## wget https://sourceforge.net/projects/rseqc/files/BED/Human_Homo_sapiens/hg38_RefSeq.bed.gz
     ## STAR --runThreadN 16 --runMode genomeGenerate --genomeDir genome --genomeFastaFiles genome/genome_hg38.fa --sjdbGTFfile genome/annotations_hg18.gtf --sjdbOverhang 75
 
-    gzip -d $1/$1.clean.fastq
+    gzip -d $i/$i.clean.fastq
 
     echo "Alignment with STAR ..."
-    STAR --runThreadN 16 --genomeDir genome --readFilesIn $i/$i.clean.fastq --outFilterType BySJout --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverLmax 0.6 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMattributes NH HI NM MD --outSAMtype BAM SortedByCoordinate --outFileNamePrefix $i/$i
+    STAR --runThreadN 16 --genomeDir genome --readFilesIn $i/$i.clean.fastq --outFilterType BySJout --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverLmax 0.6 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMattributes NH HI NM MD --outSAMtype BAM SortedByCoordinate --outFileNamePrefix $i/$i.
     echo "Alignment done"
 
     echo "Indexing with samtools ..."
-    samtools index $i/$iAligned.sortedByCoord.out.bam
+    samtools index $i/$i.Aligned.sortedByCoord.out.bam
     echo "Indexing done"
 
     echo "Deduplication with umi_tools ..."
-    umi_tools dedup -I $i/$iAligned.sortedByCoord.out.bam --output-stats=$i/deduplicated -S $i/$i.deduplicated.bam
+    umi_tools dedup -I $i/$i.Aligned.sortedByCoord.out.bam --output-stats=$i/deduplicated -S $i/$i.deduplicated.bam
     echo "Deduplication done"
 
     echo "Counts with htseq ..."
@@ -57,10 +57,11 @@ do
     echo "Counts done"
 
     echo "Counts distribution with rseqc ..."
-    read_distribution.py -i $i/$i.deduplicated.bam -r genome/hg38_RefSeq.bed > counts/$1.read_distribution.txt
+    read_distribution.py -i $i/$i.deduplicated.bam -r genome/hg38_RefSeq.bed > counts/$i.read_distribution.txt
     echo "Counts distribution done"
 
     ## Total counts
+    echo "Total rad counst for $i sample:"
     awk '{s+=$2}END{print s}' counts/$i.read_counts.txt
 
     echo "Sample $i done"
