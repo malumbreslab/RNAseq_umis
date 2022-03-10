@@ -5,7 +5,7 @@
 ## are necesary fastqc, genome, counts folders
 ## requeriments: 64GB 16 cores (-c) 1440 time
 
-start=$(date +%s)
+start=$(date +%T)
 
 for i in $@
 do
@@ -61,13 +61,13 @@ do
         echo "Counts distribution done"
 
         ## Total counts
-        echo "Total rad counst for $i sample:"
+        counts = awk '{s+=$2}END{print s}' counts/$i.read_counts.txt
+        echo "Total read counts for $i sample: $counts"
 
-        awk '{s+=$2}END{print s}' counts/$i.read_counts.txt
         echo "Sample $i done"
 done
 
-end=$(date +%s)
+end=$(date +%T)
 runtime=$((end-start))
 echo "Execution time: $runtime"
 
