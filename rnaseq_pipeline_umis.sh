@@ -52,6 +52,10 @@ do
     umi_tools dedup -I $i/$i.Aligned.sortedByCoord.out.bam --output-stats=$i/deduplicated -S $i/$i.deduplicated.bam
     echo "Deduplication done"
 
+    echo "Indexing with samtools ..."
+    samtools index $i/$i.deduplicated.bam
+    echo "Indexing done"
+
     echo "Counts with htseq ..."
     htseq-count -m intersection-nonempty -s yes -f bam -r pos $i/$i.deduplicated.bam genome/annotations_hg18.gtf > counts/$i.read_counts.txt
     echo "Counts done"
@@ -59,11 +63,6 @@ do
     echo "Counts distribution with rseqc ..."
     read_distribution.py -i $i/$i.deduplicated.bam -r genome/hg38_RefSeq.bed > counts/$i.read_distribution.txt
     echo "Counts distribution done"
-
-    ## Total counts
-    
-    echo "Total read counts for $i sample:"
-    awk '{s+=$2}END{print s}' counts/$i.read_counts.txt
 
     echo "Sample $i done"
 done
