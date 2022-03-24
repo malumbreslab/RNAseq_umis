@@ -5,7 +5,7 @@
 ## are necesary fastqc, genome, counts folders
 ## requeriments: 64GB 16 cores (-c) 1440 time
 
-start=$(date +%T)
+start=$(date +%s)
 
 for i in $@
 do
@@ -67,8 +67,9 @@ do
     echo "Sample $i done"
 done
 
-end=$(date +%T)
+end=$(date +%s)
 runtime=$((end-start))
-echo "Execution time: $runtime"
+echo "Execution time: $runtime seconds"
+echo "Execution time: $((($runtime)/60)) minutes"
 
 echo -e "\033[0;33mAll samples analyzed!"
