@@ -118,13 +118,14 @@ Parameters:
   
 - `--mem` is memory
 - `-t` is time
+- `-J` is job name
 - `-c` is number of cores
 - `-o` is name of output file
 - `-e` is name of error file
 - `--wrap` is the command which you want to run on the cluster
   
 ```
-sbatch --mem=64G -t1440 -c 16 -o log.txt -e error.txt --wrap "bash rnaseq_pipeline_umis.sh <sample1> <sample2> <sample3>"
+sbatch --mem=64G -t1440 -c 16 -J name -o log.txt -e error.txt --wrap "bash rnaseq_pipeline_umis.sh <sample1> <sample2> <sample3>"
 ```
 
 ## Recomendations
