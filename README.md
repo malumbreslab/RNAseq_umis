@@ -140,6 +140,32 @@ For fastq with 10 millions of reads the time is about 40 min (without index geno
   
 When you index genome reference, you don't have to do it again if you want align some samples with the same reference genome.
 
+## Important functions
+
+### Quality control
+
+It is used fastqc
+
+### UMIs
+
+umi_tools (extract/dedup) is used in order to extract and deduplicate reads
+
+### Trimmering
+
+bbduk.sh is used in order to remove adapters and polyA tail from reads
+
+### Aligment
+
+It is recommended use STAR for RNA aligment
+
+### Counting
+
+Htseq-count is used -m union (more reads), -s yes (stranded reads), -i gene_name (hugo symbol)
+
+
+
+
+
 
 
 
