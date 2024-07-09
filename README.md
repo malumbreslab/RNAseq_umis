@@ -18,7 +18,7 @@ Pipeline to analyze 3' mRNA sequencing from FFPE samples and using UMIs (avoid d
 ## Contents of the repository
 
 - The bash script `rnaseq_pipeline_umis.sh` that can be used for obtaining read counts from fastq files.
-- `Resource` folder has two files, `polyA.fa.gz` (extract polyA in trimmering) and `truseq_rna.fa.gz` (extract adapters in trimmering).
+- `Resource` folder has `adapters.fa.gz` with adapters sequences and polyA.
 - `config_env.yml` which is a file for create the working enviroment.
 
 The output of this bash script includes:
@@ -72,6 +72,8 @@ mkdir data
 mkdir counts genome fastqc
 ```
 ### Step 6: Download genome reference and annotations files (hg38)
+
+Steps 6 and 7 are not neccesary if have a created index genome (or use the index genome from shared folder in the cluster)
 
 If you have not wget package installed
   
