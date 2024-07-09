@@ -2,9 +2,7 @@
 
 ## Description
 
-RNA sequencing analysis pipeline with UMIs
-
-Generate counts from fastq files from Ilumina sequencing with the use of UMIs.
+Pipeline to analyze 3' mRNA sequencing from FFPE samples and using UMIs (avoid duplications)
 
 ## Table of contents
 
