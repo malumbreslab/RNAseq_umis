@@ -2,7 +2,7 @@
 
 ## Description
 
-Pipeline to analyze 3' mRNA sequencing from FFPE samples and using UMIs (avoid duplications)
+Pipeline to analyze 3' mRNA sequencing from FFPE samples and using UMIs
 
 ## Table of contents
 
